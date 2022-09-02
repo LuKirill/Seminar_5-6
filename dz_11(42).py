@@ -16,7 +16,7 @@ def rle_encode(string):
     else:
         encoding += str(count) + prev_char
         return encoding
-en = rle_encode("rrrrrrrrrrttttttttttyyyyyyyy")
+en = rle_encode("rrrrrrrrrrtttttttyyyyyyyy")
 print(en)
 
 def rle_decode(string):

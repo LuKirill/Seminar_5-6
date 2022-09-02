@@ -6,6 +6,7 @@
 import random
 k = 2
 x = random.randrange(0, 100, 1)
+
 with open("text1.txt", "w", encoding="utf-8") as f:
     f.write("2 * x ** k + 4 * x + 5 = 0")
 with open("text2.txt", "w", encoding="utf-8") as f:
