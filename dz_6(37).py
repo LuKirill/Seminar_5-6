@@ -4,20 +4,25 @@
 #    [5, 2, 3, 4, 6, 1, 7] => [2, 3, 4, 6, 7]
 #  Порядок элементов менять нельзя
 
-#нужно сделать список, где list[i - 1] < list[i] < list[i + 1]
-#начинаем со 2го элемента, если list[i - 1] <= list[i] - удаляем list[i - i] из списка
-#если list[i] >= list[i + 1] - удаляем list[i] из списка
-#для последнего элемента списка list[i] > list[i - 1]
-my_list = [1, 5, 2, 3, 4, 6, 1, 7]
-try:
-    for i in range(1, len(my_list)):
-        for j in range(i + 1, len(my_list)):
-            for k in range(i - 1, len(my_list)):
-                if my_list[i] < my_list[j]:
-                    if my_list[i] > my_list[k]:
-                        print(my_list)
-                else:
-                    del my_list[i]
-except IndexError:
-    print("list index out of range")
-# print(my_list)
+x = [1, 5, 2, 3, 4, 6, 1, 7]
+l = []
+m = []
+j = 1
+while j < len(x):
+    i = j
+    n = x[:]
+    while i < len(n) - 1:
+        if n[i] < n[i + 1]:
+            m.append(n[i])
+            i += 1
+        else:
+            n.pop(i + 1)
+    j += 1
+    if len(l) < len(m):
+        l = m
+    m = []
+if x[-1] > l[-1]:
+    l.append(x[-1])
+if x[0] < l[0]:
+    l.insert(0, x[0])
+print(l)
